@@ -1,0 +1,9 @@
+<i-cell-group>
+  <block wx:for="{{company_list}}" wx:key="item" >
+    <i-cell title="{{item.name}}（{{item.member_num}}人）" label="您是{{item.role}}   单位ID:{{item.unit_id}}" bindtap="enterunion" data-i="{{item}}" is-link></i-cell>
+  </block>
+</i-cell-group>
+
+<view class="create" bindtap="create">
+  <button class="btn">我要创建单位</button>
+</view>

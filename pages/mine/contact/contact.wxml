@@ -1,0 +1,3 @@
+<!--pages/mine/contact/contact.wxml-->
+<button open-type="contact">人工客服</button>
+<button open-type="feedback">意见反馈</button>

@@ -1,0 +1,136 @@
+
+
+<i-tabs current="{{ current_scroll }}" color="#64a1b0" scroll bindchange="handleChangeScroll">
+    <i-tab key="1" title="全部公告"></i-tab>
+    <i-tab key="2" title="全部收集表"></i-tab>
+    <i-tab wx:if="{{info.role!='成员'}}"  key="3" title="车辆登记"></i-tab>
+    <i-tab wx:if="{{info.role!='成员'}}"  key="4" title="管理员专栏"></i-tab>
+    <i-tab key="5" title="成员列表"></i-tab>
+     <i-tab key="6" title="关于本单位"></i-tab>
+
+</i-tabs>
+<view wx:if="{{ current_scroll ==='1'}}" class='tab1'>
+  <view class="card" wx:for="{{notice}}">
+    <text class="date">{{item.created_at}}</text>
+    <view class="content">{{item.content}}</view>
+  </view>
+
+</view>
+<view wx:elif="{{ current_scroll ==='2'}}" class='tab2'>
+  <image class="write" src="/assets/company/Write.png" bindtap="write"></image>
+  <view class="card"  wx:for="{{questionaire}}">
+    <text class="date">id:{{item.id}}</text>
+    <view class="content">{{item.name}}</view>
+    <text class="date">{{item.created_at}}</text>
+  </view>
+   <mymodal type="prompt" title='创建收集表'   form-items="{{writeitem}}" confirmText='确定' cancelText='取消' showCancel="true"
+          showStatus='{{writehidden}}'  bind:complete="onCompletewrite">
+
+  </mymodal>
+</view>
+<view wx:elif="{{ current_scroll ==='3'}}" class='tab3'>
+<view style="margin:30rpx auto;font-weight:600;color:#0e0e0e;text-align:center;">上传车牌照片（一次最多上传21张）</view>
+<view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="deletepic" src="/assets/company/delete.png" bindtap="deletepic" id="{{index}}"></image>
+      <image class="moment_img" src="{{item}}" bindtap="showbigpic" id="{{index}}"></image>
+    </view>
+    <view wx:if="{{hideAdd}}" style="display:inline-block;margin-left:10rpx;">
+      <image   bindtap="chooseimage" class="moment_img" src='/assets/company/add.png'></image>
+    </view>
+    
+  </view>
+  <view style="display:block;width:100%;text-align:center;margin:10rpx auto;">
+    <view class="btn" bindtap="send" >确认并上传</view>
+  </view>
+
+</view>
+<view wx:elif="{{ current_scroll ==='4'}}" class='tab4'>
+  <view class="card"  wx:if="{{info.role=='超管'}}">
+    <view class="title">
+      <text class="label">权限分配</text>
+      <text class="date">仅超级管理员可见</text>
+    </view>
+    <input class="handleinput"  bindinput="cinuser_id"  placeholder-class="inputtext" placeholder="输入本单位用户id" />
+    <view class="btn"  bindtap="setadmin">设置管理</view>
+    <view class="btn" bindtap="deleteadmin">取消管理</view>
+  </view>
+  <view class="card" wx:if="{{info.role=='超管'}}">
+    <view class="title">
+      <text class="label">单位属性</text>
+      <text class="date">仅超级管理员可见</text>
+    </view>
+    <input class="handleinput" bindinput="cinname" bindconfirm="confirmname"  placeholder-class="inputtext" placeholder="修改单位名称" />
+   <button class="delete" bindtap="deleteunion">删除单位</button>
+  </view>
+   <view class="card">
+    <view class="title">
+      <text class="label">发布公告</text>
+      <text class="date">管理可见</text>
+    </view>
+     <textarea bindinput="cinnotice" bindconfirm="confirmnotice" placeholder-class="inputtext" auto-height placeholder="20~100字" />
+     <view class="gobtn"  bindtap="confirmnotice">点击发布</view>
+  </view>
+  <view class="card">
+    <view class="title">
+      <text class="label">快速登记</text>
+      <text class="date">管理可见</text>
+    </view>
+    <view>
+      <view class="btn"  bindtap="showcar">车辆日志</view>
+      <view class="btn" bindtap="showman">行人日志</view>
+    </view>
+     <view style="margin-bottom:3%;">
+      <view class="btn"  bindtap="cincar">车牌录入</view>
+      <view class="btn" bindtap="cinman">人脸录入</view>
+    </view>
+    <text class="date">在车辆/行人快速登记前需要单位录入上传车牌/人脸照片，此信息仅供此功能使用，请放心上传</text>
+  </view>
+</view>
+<view wx:if="{{ current_scroll ==='5'}}" class='tab5'>
+<!--搜索栏-->
+  <view class="searchtop">
+    <view class="search">
+      <image class="searchpic" src="/assets/shop/search.png"></image>
+      <input class="searcharea" placeholder="输入姓名" confirm-type="search" bindconfirm="search"></input>
+    </view>
+    <view class="membercard" wx:for="{{searchmem}}">
+    <image src="{{item.avatar_url}}"></image>
+    <view class="name">{{item.name}}</view>
+     <view class="date" style="margin:0 5%;">id:{{item.id}}</view>
+    <view class="handlemem" wx:if="{{info.role!='成员'}}" bindtap="deletemem" id="{{item.id}}">移除</view>
+     <view style="margin-left:1%;">
+      <view class="date" style="margin:0 5% 0 2%;">权限：{{item.role}}</view>
+      <view class="date" style="margin:0 5% 0 2%;">手机：{{item.phone}}</view>
+    </view>
+  </view>
+  </view>
+  <view class="membercard" wx:for="{{member}}">
+    <image src="{{item.avatar_url}}"></image>
+    <view class="name">{{item.name}}</view>
+     <view class="date" style="margin:0 5%;">id:{{item.id}}</view>
+    <view class="handlemem" wx:if="{{info.role!='成员'}}" bindtap="deletemem" id="{{item.id}}">移除</view>
+     <view style="margin-left:1%;">
+      <view class="date" style="margin:0 5% 0 2%;">权限：{{item.role}}</view>
+      <view class="date" style="margin:0 5% 0 2%;">手机：{{item.phone}}</view>
+    </view>
+  </view>
+  <view class="membercard" wx:if="{{info.role!='成员'}}"  wx:for="{{application}}">
+    <image src="{{item.avatar_url}}"></image>
+    <view class="name">{{item.name}}</view>
+     <view class="date" style="margin:0 5%;">id:{{item.id}}</view>
+    <view class="handlemem" bindtap="allowmem" id="{{item.id}}">同意</view>
+     <view style="margin-left:1%;">
+      <view class="date" style="margin:0 5% 0 2%;">权限：申请人</view>
+      <view class="date" style="margin:0 5% 0 2%;">手机：{{item.phone}}</view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{ current_scroll ==='6'}}" class='profile'>
+    <view class="label">单位ID：{{profile.id}}</view>
+    <view class="label">单位名称：{{profile.name}}</view>
+    <view class="label">单位类型：{{profile.type}}</view>
+    <view class="label">单位人数：{{profile.member_num}}</view>
+    <view class="label">单位简介：{{profile.profile}}</view>
+  </view>

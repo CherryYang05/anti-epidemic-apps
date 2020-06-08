@@ -1,0 +1,65 @@
+page {
+  background: #f8f8f9;
+}
+
+.join {
+  width: 100%;
+  height: 600rpx;
+}
+
+.join .box {
+  margin: auto auto;
+  margin-top: 50rpx;
+  width: 600rpx;
+  height: 85rpx;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 32rpx;
+  border: 1px solid #dddee1;
+}
+
+.box input {
+  display: inline-block;
+  margin-top: 15rpx;
+  margin-left: 25rpx;
+}
+
+.join .tip {
+  margin: auto auto;
+  margin-top: 50rpx;
+  width: 600rpx;
+  height: 260rpx;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 32rpx;
+  border: 1px solid #dddee1;
+}
+
+.tip textarea {
+  display: inline-block;
+  margin-top: 15rpx;
+  margin-left: 25rpx;
+  max-height: 230rpx;
+  max-width: 550rpx;
+}
+
+.submit {
+  width: 100%;
+}
+
+.submit button {
+  width: 600rpx !important;
+  height: 85rpx;
+  text-align: center;
+  margin: 0;
+  font-size: 13px;
+  border-radius: 4px;
+  line-height: 44rpx;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #fff !important;
+  background: #2d8cf0 !important;
+}
+
+.hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,10 @@
+/* pages/mine/contact/contact.wxss */
+page{
+  background-color: #5676E3;
+}
+button{
+  
+  background-color: white !important;
+  margin:30% auto;
+  color: #5676E3;
+}

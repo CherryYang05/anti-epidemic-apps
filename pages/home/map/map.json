@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "daily-display": "/components/dailyData/dailyData",
+    "ec-canvas": "/ec-canvas/ec-canvas",
+    "i-action-sheet": "/components/action-sheet/index",
+    "i-button": "/components/button/index",
+    "i-icon": "/components/icon/index",
+    "i-collapse": "/components/collapse/index",
+    "i-collapse-item": "/components/collapse-item/index",
+    "current-map": "/components/currentMap/currentMap"
+  },
+  "backgroundColor": "#06516E",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#06516E",
+  "navigationBarTitleText": "疫情地图",
+  "navigationBarTextStyle": "white"
+}

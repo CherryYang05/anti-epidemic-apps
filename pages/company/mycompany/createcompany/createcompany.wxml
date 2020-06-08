@@ -1,0 +1,16 @@
+<view class="join">
+  <view class="box">
+    <input bindinput="input_name" placeholder="单位名称" />
+  </view>
+  <view class="box">
+    <input bindinput="input_type" placeholder="单位类型" />
+  </view>
+  <view class="tip">
+    <textarea bindinput="input_tip" placeholder="20-100字说明" placeholder-class="holder" cursor-spacing="40rpx" maxlength="100" adjust-position/>
+  </view>
+
+</view>
+
+<view class="submit">
+  <button bindtap="register" hover-class="hover">创建单位</button>
+</view>

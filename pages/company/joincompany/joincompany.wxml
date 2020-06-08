@@ -1,0 +1,13 @@
+<view class="join">
+  <view class="box">
+    <input bindinput="input_id" placeholder="请输入单位ID" />
+  </view>
+  <view class="box">
+    <input bindinput="input_remarks" placeholder="备注" />
+  </view>
+
+</view>
+
+<view class="submit">
+  <button bindtap="register" hover-class="hover">申请加入</button>
+</view>

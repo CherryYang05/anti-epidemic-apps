@@ -1,0 +1,13 @@
+<!--pages/news/onepagenews/onepagenews.wxml-->
+<view class="Ncontainer">
+  <view class="header">
+    <view class="headertext">{{news.title}}</view>
+    <view style="display:flex;flex-drection:row;padding:10rpx;border-radius:20rpx;border:5rpx #5676E3 solid;position:absolute;right:30rpx;top:80rpx" bindtap="wordYun">
+      <image style="width:50rpx;height:50rpx" src="/assets/news/voice.png"></image>
+      <view style="font-size:33rpx;color:#5676E3;display:flex;justify-content:center">{{audio}}</view>
+    </view>
+  </view>
+  <view style="font-size:27rpx;margin-left:40rpx;margin-top:20rpx;color:gray;">时间：{{news.date}}</view>
+  <image class="pic" mode="widthfix" wx:for="{{news.img}}" src="{{item}}" wx:key="index"></image>
+  <view style="width:95%;margin-top:50rpx;text-indent:2em;font-size:35rpx;margin-left: 4%;margin-bottom:50rpx">{{news.content}}</view>
+</view>

@@ -1,0 +1,7 @@
+<view class="logo">
+<image src="../../assets/logo.png" ></image>
+</view>
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="login">微信登录</button>
+<view class="tip">
+针对当下疫情及日常生活中集预防、管理、便民一体的健康小助手
+</view>

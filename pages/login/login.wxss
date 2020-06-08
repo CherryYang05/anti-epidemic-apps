@@ -1,0 +1,28 @@
+/* pages/login/login.wxss */
+.logo{
+  position: absolute;
+  top: 10%;
+  left:37%;
+}
+.logo image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.login{
+  display:block;
+  margin-left: auto;
+  margin-top: 75%;
+  background-color: #5676E3 !important;
+  color: white;
+  font-size: 30rpx;
+  width: 600rpx !important;
+  padding: 25rpx 0rpx !important;
+  font-weight: 650 !important;
+}
+.tip{
+  font-size: 23rpx;
+  color: #666;
+  position: absolute;
+  bottom:100rpx;
+  left: 10%;
+}

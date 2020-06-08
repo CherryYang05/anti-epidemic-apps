@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/company/tabs/tabs",
+    
+    "pages/company/log/car",
+    "pages/company/log/man",
+    "pages/company/incar/index",
+    "pages/company/inman/index",
+    "pages/home/home",
+    "pages/shop/search/search",
+    "pages/mine/contact/contact",
+    "pages/campaign/campaign",
+    "pages/company/healthycode/heathycode",
+    
+    "pages/news/news",
+    "pages/news/onepagenews/onepagenews",
+    "pages/shop/shop",
+    "pages/mine/mine",
+    "pages/company/joincompany/joincompany",
+    "pages/company/mycompany/mycompany",
+    "pages/company/mycompany/createcompany/createcompany",
+    "pages/home/map/map"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#5676E3",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "assets/tabbar/news.png",
+        "selectedIconPath": "assets/tabbar/news_selected.png",
+        "pagePath": "pages/news/news",
+        "text": "新闻"
+      },
+      {
+        "iconPath": "assets/tabbar/campaign.png",
+        "selectedIconPath": "assets/tabbar/campaign_selected.png",
+        "pagePath": "pages/campaign/campaign",
+        "text": "活动"
+      },
+      {
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home_selected.png",
+        "pagePath": "pages/home/home",
+        "text": "主页"
+      },
+      {
+        "iconPath": "assets/tabbar/shopping.png",
+        "selectedIconPath": "assets/tabbar/shopping_selected.png",
+        "pagePath": "pages/shop/shop",
+        "text": "商城"
+      },
+      {
+        "iconPath": "assets/tabbar/mine.png",
+        "selectedIconPath": "assets/tabbar/mine_selected.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.3",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
+}

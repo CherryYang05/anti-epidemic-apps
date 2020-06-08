@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-notice-bar": "/dist/notice-bar/index",
+    "ec-canvas": "/ec-canvas/ec-canvas"
+  },
+  "navigationBarBackgroundColor": "#5676E3",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "主页",
+  "backgroundTextStyle": "dark",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+}

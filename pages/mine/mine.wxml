@@ -1,0 +1,68 @@
+<!--pages/mine/mine.wxml-->
+<view class="minecontainer">
+  <view class="top">
+    <view class="user">
+      <image class="userpic" src="{{userinfo.avatar_url}}" bindtap="uploaduserpic"></image>
+      <view class="name">
+        <view class="username" >
+        <input class="nameinput" maxlength="6" bindconfirm="changename" placeholder-style="color:white" placeholder="{{userinfo.name}}" />
+          <!-- <modal hidden="{{namechangehidden}}"  title="修改昵称"  cancel-text="取消" confirm-text="保存" bindcancel="cancelname" bindconfirm="savename">
+            <view class="newphone">
+              <text>修改昵称</text>
+              <input bindinput='changename' maxlength="12" type='text'  placeholder="{{userinfo.name}}" />
+            </view>
+          </modal> -->
+        </view>
+        <view class="company"><input  maxlength="11" bindconfirm="changephone" placeholder-class="company" placeholder="{{userinfo.phone}}" /></view>
+
+      </view>
+    </view>
+    <view class="phone" bindtap="handletoast">
+      <image class="icon" src="/assets/mine/phone.png"></image>
+      <view class="icontext" >修改资料
+        <!-- <modal hidden="{{phonechangehidden}}"  title="仅单位管理可见" cancel-text="取消" confirm-text="保存"  bindcancel="cancelphone" bindconfirm="savephone">
+          <view class="newphone">
+            <text>手机号码</text>
+            <input bindinput='changephone' type='number' placeholder="{{userinfo.phone}}" />
+          </view>
+        </modal> -->
+      </view>
+      <image class="jiantou" src="/assets/mine/jiantou.png"></image>
+    </view>
+  </view>
+ 
+    
+  
+  <view class="choices">
+    <view class="choice">
+      <image class="icon" src="/assets/mine/xiaoxi.png"></image>
+      <view class="icontext">单位消息</view>
+      <image class="jiantou" src="/assets/mine/jiantou.png"></image>
+    </view>
+    <view class="line"></view>
+    <view class="choice">
+      <image class="icon" src="/assets/mine/tongzhi.png"></image>
+      <view class="icontext">官方通知</view>
+      <image class="jiantou" src="/assets/mine/jiantou.png"></image>
+    </view>
+    <view class="line"></view>
+    <view class="choice" bindtap="showcontact">
+      <image class="icon" src="/assets/mine/kufu.png"></image>
+      <view class="icontext" >在线客服</view>
+      <image class="jiantou" src="/assets/mine/jiantou.png"></image>
+    </view>
+    <view class="line"></view>
+    <view class="choice" bindtap="showcontact">
+      <image class="icon" src="/assets/mine/guanyu.png"></image>
+      <view class="icontext">
+        关于我们
+      </view>
+      <image class="jiantou" src="/assets/mine/jiantou.png"></image>
+    </view>
+  </view>
+
+  <view class="tuichudenglu" bindtap="exitlogin" >
+    <image class="tuichupic" src="/assets/mine/tuichudenglu.png"></image>
+    <view>退出登录</view>
+  </view>
+</view>

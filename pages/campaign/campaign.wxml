@@ -1,0 +1,4 @@
+<view class="container" bindtap="showenter">
+  <!-- <image src="../../assets/campaign.png" mode="widthFix" ></image> -->
+  
+</view>

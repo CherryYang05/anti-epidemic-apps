@@ -1,0 +1,14 @@
+{
+
+  "component": true,
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index"
+},
+
+"navigationBarTextStyle": "black",
+"navigationBarTitleText": "主页",
+"backgroundTextStyle": "light",
+"navigationStyle": "default",
+"enablePullDownRefresh": true
+}

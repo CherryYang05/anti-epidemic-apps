@@ -1,0 +1,57 @@
+page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  padding-bottom: 70rpx;
+  box-sizing: border-box;
+}
+
+.header text {
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.body {
+  width: 100%;
+  height: 60%;
+}
+
+.body .QRCode {
+  width: 300rpx;
+  height: 300rpx;
+  margin: auto auto;
+  padding-bottom: 100rpx;
+}
+
+.btn .change_btn {
+  margin-bottom: 20rpx;
+}
+
+.btn .register_btn {
+}
+
+.btn button {
+  font-size: 34rpx !important;
+  font-weight: 600 !important;
+}
+
+.footer {
+  width: 100%;
+  height: 20%;
+}
+
+.footer .text {
+  margin: 0 40rpx;
+  font-size: 28rpx;
+  color: #c6c6c6;
+}

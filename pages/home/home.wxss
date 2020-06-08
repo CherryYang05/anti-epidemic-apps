@@ -1,0 +1,247 @@
+page {
+  background: #f8f8f9;
+}
+
+.container {
+}
+
+.header {
+}
+
+/* 天气 */
+
+.weather {
+  width: 100%;
+  height: 50rpx;
+}
+
+.weather .area {
+  display: inline-block;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+
+.weather .temperature {
+  display: inline-block;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+.weather .weather_info {
+  display: inline-block;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+/* banner */
+
+.banner {
+  display: block;
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 400rpx;
+  background: #f8f8f9;
+}
+
+.itemImg {
+  width: 590rpx;
+  height: 250rpx;
+  border-radius: 18rpx;
+  z-index: 5;
+  opacity: 0.7;
+  margin-top: 35rpx;
+}
+
+.active {
+  opacity: 1;
+  z-index: 10;
+  height: 320rpx !important;
+  transition: all 0.3s ease-in 0s;
+  margin-top: 0;
+}
+
+.banner swiper-item {
+  box-sizing: border-box;
+  padding: 20rpx 20rpx;
+}
+
+/* 今日疫情数据 */
+
+.data {
+  position: relative;
+  display: block;
+  border-radius: 15rpx;
+  margin: 30rpx 30rpx;
+  background: #fff;
+  box-shadow: 0px 0px 3px 0px rgba(107, 105, 105, 0.3);
+  overflow: hidden;
+  height: auto;
+}
+
+.data .block {
+  display: inline-block;
+  width: 60rpx;
+  height: 50rpx;
+}
+
+.data_text {
+  width: 300rpx;
+  display: block;
+  font-size: 44rpx;
+  margin: 30rpx 20rpx 20rpx 30rpx;
+  overflow: hidden;
+}
+
+.data .epidemic_data {
+  display: inline-block;
+  width: 200rpx;
+  margin: 20rpx 0 0 0;
+  text-align: center;
+}
+
+.data .num {
+  display: block;
+  font-size: 44rpx;
+  margin-bottom: 10rpx;
+}
+
+.data .info {
+  display: block;
+  font-size: 34rpx;
+}
+
+/* 更多按钮 */
+.more {
+  position: absolute;
+  width: 130rpx;
+  height: 70rpx;
+  top: 30rpx;
+  right: 40rpx;
+}
+
+.more .more_btn {
+  width: 130rpx !important;
+  height: 70rpx !important;
+  padding: 0;
+  margin: 0;
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 65rpx;
+  box-shadow: 0px 0px 1px 0px rgba(107, 105, 105, 0.2);
+  border: 1px solid #e9eaec;
+}
+
+.hover {
+  background: #e9eaec;
+}
+
+/* 地图 */
+.map_outer {
+  margin: 30rpx;
+}
+
+.map {
+  width: 100%;
+}
+
+.canvas {
+  margin-top: 30rpx;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 行程查询 */
+.tips{
+  color:#777;
+  font-size: 26rpx;
+  margin: 20rpx 30rpx;
+}
+.dest_search {
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  margin: 30rpx 30rpx;
+  height: auto;
+  background: #fff;
+  box-shadow: 0px 0px 3px 0px rgba(107, 105, 105, 0.3);
+  overflow: hidden;
+}
+
+.dest_search .search {
+  margin-top: 35rpx;
+}
+
+.search .input {
+  display: inline-block;
+  width: 440rpx;
+  height: 60rpx;
+  border: 1rpx solid #dddee1;
+  border-radius: 8rpx;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.search input {
+  margin-left: 20rpx;
+  height: 60rpx;
+}
+
+.search .btn {
+  display: inline-block;
+  width: 160rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+}
+
+.search button {
+  display: inline-block !important;
+  width: 160rpx !important;
+  height: 60rpx !important;
+  padding: 0 !important;
+  font-size: 32rpx !important;
+  font-weight: 500;
+  background: #066bef;
+  color: #fff;
+  border-radius: 4px;
+  border: 1rpx solid #1293f4;
+  line-height: 52rpx;
+}
+
+.search .btn_hover {
+  box-shadow: 1rpx 1rpx 3rpx #1293f4;
+  background: #1293f4;
+}
+
+/* 单位管理专区 */
+
+.co_management {
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  margin: 30rpx 30rpx;
+  height: 240rpx;
+  background: #fff;
+  box-shadow: 0px 0px 3px 0px rgba(107, 105, 105, 0.3);
+  overflow: hidden;
+}
+
+.co_management .content {
+  width: 150rpx;
+  height: 80rpx;
+  display: inline-block;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 5rpx 25rpx 0 45rpx;
+}
+
+.co_management .content text {
+  display: block;
+  margin-top: 16rpx !important;
+  color: #FFF;
+}
+
+.hover {
+  box-shadow: 2rpx 1rpx 5rpx rgba(107, 105, 105, 0.3);
+  opacity: 0.9;
+}

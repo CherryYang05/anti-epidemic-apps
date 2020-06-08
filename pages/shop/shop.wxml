@@ -1,0 +1,117 @@
+<!--pages/shop/shop.wxml-->
+<view class="shopcontainer">
+
+<!--搜索栏-->
+  <view class="searchtop">
+    <view class="search">
+      <image class="searchpic" src="/assets/shop/search.png"></image>
+      <input class="searcharea" placeholder="大家都在搜：医用口罩" confirm-type="search" bindconfirm="search"></input>
+    </view>
+  </view>
+
+  <swiper class="carousel" indicator-dots="ture" autoplay interval="5000">
+    <swiper-item wx:for="{{Carousel_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+      <image class="testpic"  src="{{item.image_url}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="recommendarea">
+    <view class="recommendobj" wx:for="{{producticon_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+      <image class="objpic" src="{{item.image_url}}"></image>
+      <view class="objtext" >{{item.name}}</view>
+    </view>
+  </view>
+
+  <!---TAB-->
+  <view class="tabbar">
+    <view class='tab {{currentTab=="0"?"active":""}}' data-current="0" bindtap="clicktab">{{sort_list[0].name}}</view>
+    <view class='tab {{currentTab=="1"?"active":""}}' data-current="1" bindtap="clicktab">{{sort_list[1].name}}</view>
+    <view class='tab {{currentTab=="2"?"active":""}}' data-current="2" bindtap="clicktab">{{sort_list[2].name}}</view>
+    <view class='tab {{currentTab=="3"?"active":""}}' data-current="3" bindtap="clicktab">{{sort_list[3].name}}</view>
+    <view class='tab {{currentTab=="4"?"active":""}}' data-current="4" bindtap="clicktab">{{sort_list[4].name}}</view>
+  </view>
+
+  <!--tab1-->
+  <!--内容1-->
+  <view class="content" hidden="{{currentTab!='0'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{product1_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+          <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>   ----->  
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image>  
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>  
+
+  <!--tab2-->
+  <!--内容2-->
+  <view class="content" hidden="{{currentTab!='1'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{product2_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+          <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--tab3-->
+  <!--内容3-->
+  <view class="content" hidden="{{currentTab!='2'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{product3_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+          <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--tab4-->
+  <!--内容3-->
+  <view class="content" hidden="{{currentTab!='3'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{product4_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+          <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--tab5-->
+  <!--内容5-->
+  <view class="content" hidden="{{currentTab!='4'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{product5_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+          <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+</view>

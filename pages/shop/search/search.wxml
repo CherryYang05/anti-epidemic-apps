@@ -1,0 +1,53 @@
+<!--pages/shop/search/search.wxml-->
+<view class="searchcontainer">
+  <view class="searchtop">
+    <view class="search">
+      <image class="searchpic" src="/assets/shop/search.png"></image>
+      <input class="searcharea" placeholder="大家都在搜：医用口罩" bindinput='getSearchKey'></input>
+    </view>
+  </view>
+  <i-tabs current="{{ current }}" color="#1FC3CF" bindchange="handleChange">
+    <i-tab key="tab1" title="综合优先（综合）"></i-tab>
+    <i-tab key="tab2" title="价格降序"></i-tab>
+    <i-tab key="tab3" title="价格升序"></i-tab>
+  </i-tabs>
+  <view wx:if="{{current=='tab1'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{search_list}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+        <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image> 
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{current==='tab2'}}">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{search_listdown}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+        <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image> 
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{current==='tab3'}}" wx:key="index">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{search_list_up}}" wx:key="index" bindtap="gotoproduct" data-id="{{item.id}}" data-word="{{item.word}}">
+          <!----------单个商品淘宝口令--------->
+          <!--<modal wx:if="{{clickid==item.id}}" hidden="{{producthidden}}" title="{{item.name}}" confirm-text="复制" cancel-text="返回" catachcancel="cancel" bindconfirm="copy">{{item.word}}</modal>-->
+          <image src='{{item.images_url[0]}}' mode='widthFix'></image> 
+          <text>{{item.name}}</text>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,87 @@
+<view class="contanier">
+  <!-- header -->
+  <view class="header">
+    <!-- 显示天气及地理位置信息 -->
+    <!-- <view class="weather">
+      <view class="area">
+        <text>秦皇岛</text>
+        <image src="/assets/locate.png" style="width:35rpx;height:35rpx;margin-top:5rpx;"></image>
+      </view>
+      <view class="temperature">
+        <text>-2°~-12°</text>
+      </view>
+      <view class="weather_info">
+        <text>冰雹</text>
+      </view> -->
+    <!-- </view> -->
+
+    <!-- banner -->
+    <swiper class="banner" bindchange="handleBanner" indicator-dots indicator-color="rgba(0,0,0,0.4)" indicator-active-color="#000" circular autoplay interval="5000" previous-margin="60rpx" next-margin="60rpx">
+      <block wx:for="{{banner_list}}" wx:key="item">
+        <swiper-item>
+          <navigator url="{{item.url}}">
+            <image class="itemImg {{currentIndex == item.index ? 'active': ''}}" src="{{item.src}}" bindtap="gothisnew"></image>
+          </navigator>
+          <!-- <image class="itemImg {{currentIndex == item.index ? 'active': ''}}" src="{{item.src}}" id="{{item.id}}" bindtap="gothisnew"></image> -->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 滚动公告栏 -->
+  <view class="notice">
+    <i-notice-bar icon="systemprompt" loop>
+      {{noticeText}}
+    </i-notice-bar>
+  </view>
+
+  <!-- body -->
+  <view class="body">
+    <!-- 今日疫情数据 -->
+    <view class="data">
+      <text class="data_text">今日疫情数据</text>
+      <view class="more" bindtap="more">
+        <button class="more_btn" hover-class="hover">查看详情</button>
+      </view>
+      <view class="block"></view>
+      <block wx:for="{{epidemic_data}}" wx:key="id">
+        <view class="epidemic_data">
+          <text class="num" style="color:{{item.color}}">{{item.num}}</text>
+          <text class="info">{{item.text}}</text>
+        </view>
+      </block>
+      <!-- 地图 -->
+      <view class="canvas">
+        <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}" height="550"></ec-canvas>
+      </view>
+
+    </view>
+
+    <!-- 行程查询 -->
+    <view class="dest_search">
+      <text class="data_text">行程查询</text>
+      <view class="search">
+        <view class="input">
+          <input placeholder="列车/航班/地铁等(英文字母大写）" bindinput="travelInput"></input>
+        </view>
+        <view class="btn">
+          <button bindtap="search" hover-class="btn_hover">确定</button>
+        </view>
+        <view class="tips" wx:if="{{inputtip}}">
+          <text>{{inputtip}}</text>
+        </view>
+       
+      </view>
+    </view>
+
+    <!-- 单位管理专区 -->
+    <view class="co_management">
+      <text class="data_text">单位管理专区</text>
+      <block wx:for="{{manage_list}}" wx:key="id">
+        <view class="content" hover-class="hover" data-para="{{item.id}}" style="background:linear-gradient(to bottom right,{{item.color}},#5cadff);border:1rpx solid {{item.color}};" bindtap="tapTo">
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

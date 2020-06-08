@@ -1,0 +1,26 @@
+<!-- 健康码 -->
+<view class="header">
+  <text>当前健康码</text>
+</view>
+<view class="body">
+  <view class="QRCode">
+    <image src="{{img}}" style="width:300rpx;height:300rpx" />
+  </view>
+
+  <view class="btn">
+    <view class="change_btn" bindtap="change_code">
+      <button>更改健康码</button>
+    </view>
+    <view class="register_btn" bindtap="register">
+      <button>我要快速登记</button>
+    </view>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="text">
+    <text>
+    快速登记:点击快速登记后请拍照人脸，提交同时会将当前健康码一并发送，单位相关人员会进行审核，您的信息(健康码、人脸)仅用于单位登记审核，避免他人冒充、健康码过期或登记时间过长等可能会出现的问题，实现一键远程审核。
+    </text>
+  </view>
+</view>
