@@ -1,0 +1,87 @@
+<i-tabs current="{{ current_scroll }}" color="#64a1b0"  bindchange="handleChangeScroll">
+    <i-tab key="1" title="内部人员"></i-tab>
+    <i-tab key="2" title="外来人员"></i-tab>
+</i-tabs>
+<view wx:if="{{ current_scroll ==='1'}}" class='tab1'>
+ <view style="margin:30rpx auto;font-weight:600;color:#0e0e0e;text-align:center;">内部人员登记日志</view>
+<text class="date">管理员请及时录入内部人员车牌/人像，否则一律列入外来人员日志</text>
+<scroll-view scroll-x="true" class='scrollClass'>
+<view class="table">
+  <view class="tr">
+    <view class="thnum">登记编号</view>
+    <view class="thtime">登记时间</view>
+    <view class="thnum">用户id</view>
+    <view class="thname">姓名</view>
+    <view class="thphone">联系电话</view>
+     <view class="thcode">健康码</view>
+  </view>
+  <block wx:for="{{inData}}" wx:key="{{code}}">
+    <view class="trman" >
+    
+      <view class="thnum">{{item.num}}</view>
+      <view class="thtime">{{item.time}}</view>
+      <view class="thnum">{{item.user_id}}</view>
+      <view class="thname">{{item.name}}</view>
+      <view class="thphone">{{item.phone}}</view>
+      <view class="thcode">
+        <image src="{{item.health_code_url}}" style="width:50%;height:200rpx;"></image>
+      </view>
+    </view>
+  </block>
+</view>
+</scroll-view>
+
+<image class="out" src="/assets/company/export.png" bindtap="goout"></image>
+<image wx:if="{{topstatus}}" class="write" src="/assets/company/top.png" bindtap="gotop"></image>
+<!-- 分页 -->
+ <view class="sorter">
+  <image src="/assets/company/left.png" class="direction_left" bindtap="goleft"></image>
+  <input class="pageinput" maxlength="5" type="number" bindconfirm="goinput" placeholder-class="inputtext"  placeholder="{{current_page}}" />
+  <text style="margin:0 20rpx;" class="inputtext" >/</text>
+  <text style="margin:0 20rpx;" class="inputtext">{{total_page}}</text>
+  <image src="/assets/company/right.png" class="direction_right" bindtap="goright"></image>
+ </view>
+
+</view>
+<view wx:if="{{ current_scroll ==='2'}}" class='tab1'>
+  <view style="margin:30rpx auto;font-weight:600;color:#0e0e0e;text-align:center;">外来人员登记日志</view>
+  <text class="date">表格可水平滚动查看</text>
+
+<scroll-view scroll-x="true" class='scrollClass'>
+<view class="table">
+  <view class="tr">
+    <!-- <view class="thnum">登记编号</view> -->
+    <view class="thtime">登记时间</view>
+    <view class="thnum">用户id</view>
+    <view class="thname">姓名</view>
+    <view class="thphone">联系电话</view>
+     <view class="thcode">健康码</view>
+  </view>
+  <block wx:for="{{exData}}" wx:key="{{code}}">
+    <view class="trman" >
+    
+      <!-- <view class="thnum">{{item.num}}</view> -->
+      <view class="thtime">{{item.created_at}}</view>
+      <view class="thcar">{{item.id}}</view>
+      <view class="thname">{{item.name}}</view>
+      <view class="thphone">{{item.phone}}</view>
+      <view class="thcode">
+        <image src="{{item.health_code_url}}" style="width:50%;height:200rpx;"></image>
+      </view>
+    </view>
+  </block>
+</view>
+</scroll-view>
+
+<image class="out" src="/assets/company/export.png" bindtap="goout"></image>
+<image wx:if="{{topstatus}}" class="write" src="/assets/company/top.png" bindtap="gotop"></image>
+<!-- 分页 -->
+ <view class="sorter">
+  <image src="/assets/company/left.png" class="direction_left" bindtap="goleft"></image>
+  <input class="pageinput" maxlength="5" type="number" bindconfirm="goinput" placeholder-class="inputtext"  placeholder="{{current_page}}" />
+  <text style="margin:0 20rpx;" class="inputtext" >/</text>
+  <text style="margin:0 20rpx;" class="inputtext">{{total_page}}</text>
+  <image src="/assets/company/right.png" class="direction_right" bindtap="goright"></image>
+ </view>
+
+</view>

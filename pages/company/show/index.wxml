@@ -1,0 +1,50 @@
+<i-tabs current="{{ current_scroll }}" color="#64a1b0"  bindchange="handleChangeScroll">
+    <i-tab key="1" title="车牌库"></i-tab>
+    <i-tab key="2" title="人脸库"></i-tab>
+</i-tabs>
+<view wx:if="{{ current_scroll ==='1'}}" class='tab1'>
+ <view style="margin:30rpx auto;font-weight:600;color:#0e0e0e;text-align:center;">车牌库</view>
+ <view class="table">
+  <view class="tr bg-w">
+  <view class="thnum">用户id</view>
+    <view class="thname">姓名</view>
+    <view class="thcar ">车牌号</view>
+    <view class="thnum ">操作</view>
+  </view>
+  <block wx:for="{{carinfo}}" >
+    <view class="tr" >
+      <view class="thnum">{{item.id}}</view>
+      <view class="thname">{{item.name}}</view>
+      <view class="thcar">{{item.license}}</view>
+      <view class="thnum" bindtap="deleteit" >删除</view>
+    </view>
+  </block>
+</view>
+
+</view>
+
+<view wx:if="{{ current_scroll ==='2'}}" class='tab1'>
+  <view style="margin:30rpx auto;font-weight:600;color:#0e0e0e;text-align:center;">人脸库</view>
+  <scroll-view scroll-x="true" class='scrollClass'>
+  <view class="table">
+  <view class="tr">
+    
+    <view class="thnum">用户id</view>
+    <view class="thname">姓名</view>
+     <view class="thcode">人像</view>
+     <view class="thnum">操作</view>
+  </view>
+  <block wx:for="{{faceinfo}}">
+    <view class="trman" >
+    
+      <view class="thnum">{{item.id}}</view>
+      <view class="thname">{{item.name}}</view>
+      <view class="thcode">
+        <image src="{{item.face_url}}" style="width:50%;height:200rpx;"></image>
+      </view>
+     <view class="thnum" bindtap="deleteit" >删除</view>
+    </view>
+  </block>
+</view>
+ </scroll-view>
+</view>

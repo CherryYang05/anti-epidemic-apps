@@ -1,0 +1,10 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#5676E3",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "详情",
+  "backgroundTextStyle": "light",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+
+}

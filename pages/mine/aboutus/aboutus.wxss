@@ -1,0 +1,50 @@
+/* pages/mine/aboutus/aboutus.wxss */
+.acontainer{
+  display: flex;
+  flex-direction: column;
+}
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.caution{
+  text-indent: 2em;
+  margin-top: 10rpx;
+  margin-left: 3%;
+  margin-right: 3%;
+  color: red;
+  font-size: 32rpx;
+  
+}
+.content{
+  padding-top: 30rpx;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 32rpx;
+  color: black;
+}
+.userchart{
+  margin-top: 20rpx;
+
+  width: 100%;
+}
+
+.btreturn{
+  margin-top: 40rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40rpx;
+  background: #5676E3;
+  width: 200rpx;
+  height: 70rpx;
+  color: white;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30rpx;
+}

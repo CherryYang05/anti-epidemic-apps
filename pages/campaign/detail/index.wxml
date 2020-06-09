@@ -1,0 +1,43 @@
+<view style="width:90%;margin:0 auto;">
+     <form catchsubmit="formSubmit"  wx:if="{{hiddenscore}}" >
+      <view class="page-section">
+        <view class="page-section-title">1.截至目前，世界卫生组织（WHO）对新型冠状病毒的命名是什么？</view>
+        <radio-group name="1" id="1" bindchange="setchange">
+          <label><radio  value="A"/>A.SARS-COV</label>
+          <label><radio value="B"/>B.COVID-19</label>
+        </radio-group>
+      </view>
+     
+      <view class="page-section">
+        <view class="page-section-title">2.以下哪一点不能降低感染冠状病毒的风险？</view>
+        <radio-group name="2" id="2" bindchange="setchange">
+          <label><radio value="A"/>A.在市场随意接触野生动物</label>
+          <label><radio value="B"/>B.用肥皂水洗手30秒</label>
+        </radio-group>
+      </view>
+
+     <view class="page-section">
+        <view class="page-section-title">3.关于远途出行的事项，以下行为不正确的是？</view>
+        <radio-group name="3" id="3"  bindchange="setchange">
+          <label><radio value="A"/>A.尽量不在旅途中摘下口罩吃喝</label>
+          <label><radio value="B"/>B.用过的口罩直接放入包里</label>
+        </radio-group>
+      </view>
+
+       <view class="page-section">
+        <view class="page-section-title">4.如果怀疑自己感染了新型冠状病毒，该怎么办?</view>
+        <radio-group name="4" id="4"  bindchange="setchange">
+          <label><radio value="A"/>A.继续坚持上班或上学</label>
+          <label><radio value="B"/>B.主动戴口罩并及时到指定医院就医</label>
+        </radio-group>
+      </view>
+
+      <view class="btn-area">
+        <button style="background-color: #f2f2f3 !important;"  formType="submit">提交</button>
+      </view>
+    </form>
+    <view wx:else style="margin:30rpx auto;">  
+      您的得分：<text class="score">{{score}}</text>
+      <view style="margin:40rpx 0">解析如下:{{text}}</view>
+    </view>
+</view>

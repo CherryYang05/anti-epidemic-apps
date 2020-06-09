@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+"navigationBarTextStyle": "black",
+"navigationBarTitleText": "试卷",
+"backgroundTextStyle": "light",
+"navigationStyle": "default",
+"enablePullDownRefresh": false
+}

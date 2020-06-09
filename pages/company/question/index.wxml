@@ -1,0 +1,29 @@
+<!--pages/news/onepagenews/onepagenews.wxml-->
+<view class="Ncontainer">
+  <view class="header">
+    <view class="headertext">{{question.name}}</view>
+  </view>
+  <!-- <view style="font-size:27rpx;margin-left:4%;margin-top:-5rpx;color:gray;">{{news.date}}</view> -->
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view wx:for="{{question.content}}">
+      <input class="content" name="{{item}}" bindinput="bindKeyInput" placeholder="{{item}}"/>
+    </view>
+  <view>
+    <button class="btn"  type="mini" formType="submit">提交</button>
+    <button class="btn" type="mini" formType="reset">重置</button>
+  </view>
+  </form>
+   
+</view>
+
+<view class="collectline">收集结果</view>
+<view class="membercard" wx:for="{{memcontent}}">
+    <image src="{{item.avatar_url}}"></image>
+    <view class="name">{{item.name}}</view>
+      <view class="adate" >id:{{item.id}}</view>
+      <view class="adate" >手机：{{item.phone==''?'未填写':item.phone}}</view>
+     <view class="formitem" wx:for="{{item.content}}" wx:for-item="form" wx:for-index='key'>
+        {{key}}:{{form}}
+     </view>
+    <view class="date" >{{item.time}}</view> 
+  </view>
